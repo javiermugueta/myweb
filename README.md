@@ -13,3 +13,6 @@ docker build -t javiermugueta/myweb .
 docker push javiermugueta/myweb
 ```
 # myweb
+
+## helper
+git add * && git commit -m . && git push

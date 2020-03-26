@@ -1,0 +1,43 @@
+#
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb
+  labels:
+    app: myweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: myweb
+    spec:
+      containers:
+      - image: javiermugueta/myweb
+        name: myweb
+        ports:
+        - containerPort: 80
+          name: myweb
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myweb
+spec:
+ type: LoadBalancer
+ selector:
+  app: myweb
+ ports:
+   - name: front
+     protocol: TCP
+     port: 80
+
+
+
+     

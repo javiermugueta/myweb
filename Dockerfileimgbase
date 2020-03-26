@@ -1,0 +1,6 @@
+FROM oraclelinux:7-slim
+RUN yum -y install httpd git wget vi oracle-php-release-el7
+RUN yum install -y php php-* --skip-broken
+RUN systemctl enable httpd
+WORKDIR /wlsplugin
+COPY /wlsplugin/ .
