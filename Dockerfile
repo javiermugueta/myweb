@@ -9,6 +9,7 @@ RUN echo "Include  /etc/httpd/conf/myconf/myweb.conf" >> /etc/httpd/conf/httpd.c
 RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
 #
 WORKDIR /var/estaticos/myweb 
+ADD index.html .
 ## start A
 # https://docs.oracle.com/en/middleware/fusion-middleware/web-tier/12.2.1.4/develop-plugin/apache.html#GUID-C5484884-5311-4353-AA32-5ED25F3BBD64
 ### start B
