@@ -7,6 +7,8 @@ ADD myweb.conf .
 RUN echo "LoadModule weblogic_module /wlsplugin/lib/mod_wl_24.so" >> /etc/httpd/conf/httpd.conf
 RUN echo "Include  /etc/httpd/conf/myconf/myweb.conf" >> /etc/httpd/conf/httpd.conf
 RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
+
+RUN echo "LoadModule mod_proxy modules/mod_proxy.so" >> /etc/httpd/conf/httpd.conf
 #
 WORKDIR /var/estaticos/myweb 
 ADD index.html .
