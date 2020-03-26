@@ -9,6 +9,7 @@ RUN echo "Include  /etc/httpd/conf/myconf/myweb.conf" >> /etc/httpd/conf/httpd.c
 RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
 
 RUN echo "LoadModule proxy_module modules/mod_proxy.so" >> /etc/httpd/conf/httpd.conf
+RUN echo "LoadModule proxy_http_module modules/mod_proxy_http.so" >> /etc/httpd/conf/httpd.conf
 #
 WORKDIR /var/estaticos/myweb 
 ADD index.html .
