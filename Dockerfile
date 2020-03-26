@@ -1,6 +1,6 @@
 FROM javiermugueta/apacheimg:latest
 #
-RUN useradd opc
+#RUN useradd opc
 #
 WORKDIR /etc/httpd/conf/myconf
 ADD myweb.conf .
