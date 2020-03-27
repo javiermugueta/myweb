@@ -1,5 +1,5 @@
 FROM oraclelinux:7-slim
-RUN yum -y install httpd vi oracle-php-release-el7
+RUN yum -y install httpd mod_ssl vi oracle-php-release-el7
 RUN yum install -y php php-* --skip-broken
 RUN systemctl enable httpd
 WORKDIR /wlsplugin
